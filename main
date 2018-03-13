@@ -1,0 +1,21 @@
+import simplegui
+x = 50
+y = 200
+def draw_handler(canvas):
+    global x
+    global y
+    color = "RGB(15, 150, 150)"
+
+    x = x + 20
+    if (x >= 1000):
+        x = 50
+    canvas.draw_circle((x, y), 50, 1, color, color)
+    canvas.draw_circle((x, 300), 50, 1, color, color)
+    canvas.draw_circle((x+50,250),50,1, color, color)
+    canvas.draw_circle((x+100,250),50,1, color, color)
+    canvas.draw_circle((x+150,250),50,1, color, color)
+
+
+frame = simplegui.create_frame("Go", 1000, 400)
+frame.set_draw_handler(draw_handler)
+frame.start() 
